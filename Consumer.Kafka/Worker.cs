@@ -6,6 +6,7 @@ using Confluent.Kafka;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Serilog;
 
 namespace Consumer.Kafka
@@ -59,7 +60,8 @@ namespace Consumer.Kafka
 
             try
             {
-                using (var consumer = new ConsumerBuilder<Ignore, string>(config).Build())
+                using (var consumer = new ConsumerBuilder<Ignore, Order>(config).SetValueDeserializer(new DataDeserializer<Order>())
+                    .Build())
                 {
                     consumer.Subscribe(KafkaConfig.Topic);
                     
@@ -69,7 +71,7 @@ namespace Consumer.Kafka
                         {
                             var cr = consumer.Consume(stoppingToken);
                             logger.Information(
-                                $"Mensagem lida: {cr.Message.Value}");
+                                $"Mensagem lida: {JsonConvert.SerializeObject(cr.Message.Value)}");
                         }
                     }
                     catch (OperationCanceledException)

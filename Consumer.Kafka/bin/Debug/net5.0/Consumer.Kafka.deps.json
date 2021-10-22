@@ -10,7 +10,9 @@
         "dependencies": {
           "Confluent.Kafka": "1.4.0",
           "Microsoft.Extensions.Hosting": "5.0.0",
-          "Serilog.Sinks.Console": "3.1.1"
+          "Newtonsoft.Json": "6.0.1",
+          "Serilog.Sinks.Console": "3.1.1",
+          "System.Security.Permissions": "6.0.0-rc.2.21480.5"
         },
         "runtime": {
           "Consumer.Kafka.dll": {}
@@ -472,8 +474,32 @@
       "Microsoft.NETCore.Targets/1.1.0": {},
       "Microsoft.Win32.Registry/5.0.0": {
         "dependencies": {
-          "System.Security.AccessControl": "5.0.0",
+          "System.Security.AccessControl": "6.0.0-rc.2.21480.5",
           "System.Security.Principal.Windows": "5.0.0"
+        }
+      },
+      "Microsoft.Win32.SystemEvents/6.0.0-rc.2.21480.5": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
+        }
+      },
+      "Newtonsoft.Json/6.0.1": {
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1.17001"
+          }
         }
       },
       "runtime.native.System/4.3.0": {
@@ -569,6 +595,31 @@
             "assetType": "runtime",
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Drawing.Common/6.0.0-rc.2.21480.5": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0-rc.2.21480.5"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/System.Drawing.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          },
+          "runtimes/win/lib/netcoreapp3.1/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
           }
         }
       },
@@ -751,10 +802,35 @@
           "runtime.native.System": "4.3.0"
         }
       },
-      "System.Security.AccessControl/5.0.0": {
+      "System.Security.AccessControl/6.0.0-rc.2.21480.5": {
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "5.0.0",
           "System.Security.Principal.Windows": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
+        }
+      },
+      "System.Security.Permissions/6.0.0-rc.2.21480.5": {
+        "dependencies": {
+          "System.Security.AccessControl": "6.0.0-rc.2.21480.5",
+          "System.Windows.Extensions": "6.0.0-rc.2.21480.5"
+        },
+        "runtime": {
+          "lib/net5.0/System.Security.Permissions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
         }
       },
       "System.Security.Principal.Windows/5.0.0": {},
@@ -786,6 +862,25 @@
           "Microsoft.NETCore.Platforms": "5.0.0",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
+        }
+      },
+      "System.Windows.Extensions/6.0.0-rc.2.21480.5": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0-rc.2.21480.5"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/System.Windows.Extensions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.1/System.Windows.Extensions.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.48005"
+          }
         }
       }
     }
@@ -1013,6 +1108,20 @@
       "path": "microsoft.win32.registry/5.0.0",
       "hashPath": "microsoft.win32.registry.5.0.0.nupkg.sha512"
     },
+    "Microsoft.Win32.SystemEvents/6.0.0-rc.2.21480.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zjGNyzr1fR9aJQ2eBaAKMOB59/LB8E8ce6EYm562tQxkGL5EFAut0Fx7vHASLGdS+m0gXQVFfKbRSYT/QnTr9A==",
+      "path": "microsoft.win32.systemevents/6.0.0-rc.2.21480.5",
+      "hashPath": "microsoft.win32.systemevents.6.0.0-rc.2.21480.5.nupkg.sha512"
+    },
+    "Newtonsoft.Json/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tZ4TnfiXc3CUDZSZxXWcFOq5nDHxYY05qSDfZEJ654YOYzrPPOBgvSwJzr4jkTxeK5uoXmFG93Fq1lWDeLSmmA==",
+      "path": "newtonsoft.json/6.0.1",
+      "hashPath": "newtonsoft.json.6.0.1.nupkg.sha512"
+    },
     "runtime.native.System/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1068,6 +1177,13 @@
       "sha512": "sha512-FHkCwUfsTs+/5tsK+c0egLfacUgbhvcwi3wUFWSEEArSXao343mYqcpOVVFMlcCkdNtjU4YwAWaKYwal6f02og==",
       "path": "system.diagnostics.eventlog/5.0.0",
       "hashPath": "system.diagnostics.eventlog.5.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0-rc.2.21480.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8TWJCPW/yqKAIT2sQCeGHXOGd1UV5x+tU5/fq6oDocqDHRczMpfmucOvG842Mcmta/Wos0PYQ9UdNJrm/6jE0g==",
+      "path": "system.drawing.common/6.0.0-rc.2.21480.5",
+      "hashPath": "system.drawing.common.6.0.0-rc.2.21480.5.nupkg.sha512"
     },
     "System.Dynamic.Runtime/4.0.11": {
       "type": "package",
@@ -1209,12 +1325,19 @@
       "path": "system.runtime.interopservices.runtimeinformation/4.3.0",
       "hashPath": "system.runtime.interopservices.runtimeinformation.4.3.0.nupkg.sha512"
     },
-    "System.Security.AccessControl/5.0.0": {
+    "System.Security.AccessControl/6.0.0-rc.2.21480.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dagJ1mHZO3Ani8GH0PHpPEe/oYO+rVdbQjvjJkBRNQkX4t0r1iaeGn8+/ybkSLEan3/slM0t59SVdHzuHf2jmw==",
-      "path": "system.security.accesscontrol/5.0.0",
-      "hashPath": "system.security.accesscontrol.5.0.0.nupkg.sha512"
+      "sha512": "sha512-ep5zfyrcgXE2k/B8Qup6uVG4DbXK+VhSIJV5LTckOqWqN1J8R8/8sNAlhXtYFgmfl+z8FfBlMAwKT3Hc8ZfUnQ==",
+      "path": "system.security.accesscontrol/6.0.0-rc.2.21480.5",
+      "hashPath": "system.security.accesscontrol.6.0.0-rc.2.21480.5.nupkg.sha512"
+    },
+    "System.Security.Permissions/6.0.0-rc.2.21480.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pwb1eVkAeIglAl9uoyK/hSehRDr3wIQNYGg2TooIPg18UUhZV88BARs0Bt/dRtlulZmYXiutO9z7mIbNITv9Hw==",
+      "path": "system.security.permissions/6.0.0-rc.2.21480.5",
+      "hashPath": "system.security.permissions.6.0.0-rc.2.21480.5.nupkg.sha512"
     },
     "System.Security.Principal.Windows/5.0.0": {
       "type": "package",
@@ -1250,6 +1373,13 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "System.Windows.Extensions/6.0.0-rc.2.21480.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qUDt3FE0eDWNeSV1Gq6NdszuxdLGg/nMUm6963vdSmXM/wfppY8oIwj08fsHnYrWdWPqBP+RrTSHpAKtuhgxOw==",
+      "path": "system.windows.extensions/6.0.0-rc.2.21480.5",
+      "hashPath": "system.windows.extensions.6.0.0-rc.2.21480.5.nupkg.sha512"
     }
   }
 }
